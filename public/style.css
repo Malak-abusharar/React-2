@@ -13,11 +13,11 @@ html {
   background-color: #f2f2f2;
 }
 
-*,
+ *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
+} 
 body {
   padding-bottom: 80px;
 }
@@ -108,6 +108,17 @@ h1 {
 .hero-text p,
 .hero-btn {
   font-family: "Poppins", sans-serif;
+}
+.page-content{
+  min-height: calc(100vh - 135px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  font-size: 40px;
+
 }
 
 /* ================= FOOTER ================= */
