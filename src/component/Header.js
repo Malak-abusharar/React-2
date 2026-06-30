@@ -1,23 +1,26 @@
+import { Link , NavLink } from "react-router-dom";
+
+
 export default function Header() {
   return (
     <div>
             <header className="header">
-        <h1>Web Dev Roadmap</h1>
+        <h1><Link to="/">Web Dev Roadmap</Link></h1>
         <ul className="flex">
           <li className="main-list">
-            <a className="main-link" href="/Basic">
+            <NavLink className="main-link" to="/Basic">
               Basics
-            </a>
+            </NavLink>
           </li>
           <li className="main-list">
-            <a className="main-link" href="/Framework">
+            <NavLink className="main-link" to="/Framework">
               Frameworks
-            </a>
+            </NavLink>
           </li>
           <li className="main-list">
-            <a className="main-link" href="/Tips">
+            <NavLink className="main-link" to="/Tips">
               Tips
-            </a>
+            </NavLink>
           </li>
         </ul>
       </header>

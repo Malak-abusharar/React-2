@@ -46,12 +46,11 @@ h1 {
   font-size: 19px;
 }
 
-.main-link:hover {
+.main-link:hover, .main-link.active{
   background-color: rgb(21, 2, 79);
   box-shadow: 0 0 5px rgb(21, 2, 79);
   border-radius: 5px;
 }
-
 /* ================= HERO SECTION ================= */
 .hero-section {
   min-height: calc(100vh - 160px);
