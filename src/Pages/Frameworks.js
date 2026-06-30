@@ -1,12 +1,11 @@
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import Content from "../component/Content";
 export default function Frameworks() {
   return (
       <>
 <Header/>
-      <main className="page-content">
-      Framework
-      </main>
+      <Content data="Frameworks"/>
   <Footer/>
     </>
   )
