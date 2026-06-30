@@ -1,3 +1,4 @@
+import "./Content.css";
 export default function Content({data, developr}) {
   return (
     <main className="page-content">
