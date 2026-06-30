@@ -1,4 +1,4 @@
-footer {
+.footer footer {
   background-color: #19a8e3;
   padding: 20px 0;
   text-align: center;
@@ -9,6 +9,9 @@ footer {
   left: 0;
   width: 100%;
 }
-.comp{
-  background-color: #d2e319;
+.footer .comp{
+  background-color: #0d760d;
 }
+
+
+

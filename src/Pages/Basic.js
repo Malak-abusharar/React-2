@@ -6,6 +6,7 @@ export default function Basic() {
     <>
 <Header/>
 <Content data="Basic"/>
+
 <Footer/>
     </>
   )
