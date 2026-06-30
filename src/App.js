@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <header style={{backgroundColor: "red"}} className="header">
+      <header className="header">
         <h1>Web Dev Roadmap</h1>
         <ul className="flex">
           <li className="main-list">
@@ -36,7 +36,7 @@ function App() {
         />
       </main>
       <footer>
-        React Course - Level 1 (session 1)
+        React Course - Level 6 (session 1)
         <span>🧡</span>
       </footer>
     </>
