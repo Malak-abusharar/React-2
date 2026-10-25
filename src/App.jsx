@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from "react";
+import "./theme.css"
 function App() {
 
     const [filed, setFiled] = useState("React.js");
@@ -8,9 +9,10 @@ function App() {
     const changeLevel = () => {
       setLevel("mid")
     }
-    
+    // const theme = "dark"
+    const [theme, setTheme] = useState("");
   return (
-    <>
+    <div className={`App ${theme}`}>
     <h1>My feiled is {filed}</h1>
     <button onClick={() => setFiled("Vue")}>Change Feild</button>
     <br/>
@@ -20,7 +22,16 @@ function App() {
     <br/>
     <br/>
     <button onClick={() => setCount(count+10)}>Counter {count}</button>
-    </>
+    <br/>
+    <br/>
+    <div>
+      <button onClick={() => setTheme("light")}
+      style={{marginRight: "20px"}}>Light</button>
+      <button onClick={() => setTheme("dark")}
+       style={{marginRight: "20px"}}>Dark</button>
+      <button onClick={() => setTheme("pink")}>Pink</button>
+    </div>
+    </div>
   )
 }
 
