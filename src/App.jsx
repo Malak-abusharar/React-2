@@ -1,6 +1,10 @@
 import './App.css'
 import { useState } from "react";
-import "./theme.css"
+import "./theme.css";
+import { FaMoon, FaRegSun } from "react-icons/fa6";
+
+
+
 function App() {
 
     const [filed, setFiled] = useState("React.js");
@@ -30,6 +34,15 @@ function App() {
       <button onClick={() => setTheme("dark")}
        style={{marginRight: "20px"}}>Dark</button>
       <button onClick={() => setTheme("pink")}>Pink</button>
+    </div>
+    <div>
+      <button style={{marginTop: "30px"}}
+      onClick={() => {
+        setTheme(theme === "dark"? "light" : "dark")
+      }
+      }>
+        {theme === "dark"? <FaRegSun/> : <FaMoon/>}
+      </button>
     </div>
     </div>
   )
