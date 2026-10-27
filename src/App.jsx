@@ -2,6 +2,7 @@ import "./App.css";
 import { useReducer } from "react";
 import "./theme.css";
 import { FaMoon, FaRegSun } from "react-icons/fa6";
+import {Link} from "react-router-dom";
 const initialData = {
   feild: "React",
   level: "senior",
@@ -94,6 +95,8 @@ function App() {
           {Data.theme == "light" ? <FaMoon /> : <FaRegSun />}
         </button>
       </div>
+      <button style={{ marginTop: "30px" }}>
+        <Link to="/home">Go to home</Link></button>
     </div>
   );
 }
