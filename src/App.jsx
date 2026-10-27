@@ -1,47 +1,49 @@
 import './App.css'
-import { useState } from "react";
+import { useReducer } from 'react';
 import "./theme.css";
 import { FaMoon, FaRegSun } from "react-icons/fa6";
+const initialData = {feild: "React", level:"senior", Count:0, theme:"light"}
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "CHANGE_FEILD":
+      return { ...state, feild: action.newValue};
 
+    default:
+      return state;
+  }
+};
 
 
 function App() {
-
-    const [filed, setFiled] = useState("React.js");
-    const [level, setLevel] = useState("Senior");
-    const [count, setCount] = useState(0);
-    const changeLevel = () => {
-      setLevel("mid")
-    }
-    // const theme = "dark"
-    const [theme, setTheme] = useState("");
+  const [Data, dispatch] = useReducer(reducer, initialData);
   return (
-    <div className={`App ${theme}`}>
-    <h1>My feiled is {filed}</h1>
-    <button onClick={() => setFiled("Vue")}>Change Feild</button>
+    <div className={`App ${Data.theme}`}>
+    <h1>My feiled is {Data.feild}</h1>
+    <button onClick={() => {
+      dispatch({ type: "CHANGE_FEILD", newValue: "Vue" });
+
+    }
+    }>Change Feild</button>
     <br/>
     <br/>
-    <h1>I am a {level}</h1>
-    <button onClick={changeLevel}>Change Level</button>
+    <h1>I am a {Data.level}</h1>
+    <button>Change Level</button>
     <br/>
     <br/>
-    <button onClick={() => setCount(count+10)}>Counter {count}</button>
+    <button>Counter {Data.Count}</button>
     <br/>
     <br/>
     <div>
-      <button onClick={() => setTheme("light")}
+      <button
       style={{marginRight: "20px"}}>Light</button>
-      <button onClick={() => setTheme("dark")}
+      <button
        style={{marginRight: "20px"}}>Dark</button>
-      <button onClick={() => setTheme("pink")}>Pink</button>
+      <button>Pink</button>
     </div>
     <div>
       <button style={{marginTop: "30px"}}
-      onClick={() => {
-        setTheme(theme === "dark"? "light" : "dark")
-      }
-      }>
-        {theme === "dark"? <FaRegSun/> : <FaMoon/>}
+      >
+      <FaRegSun/> <FaMoon/>
       </button>
     </div>
     </div>
