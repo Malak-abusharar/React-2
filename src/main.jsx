@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Home.jsx';
-
+import {DataProvider} from "./context/Data";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +22,8 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
+    <DataProvider>
       <RouterProvider router={router} />
+      </DataProvider>
   </StrictMode>,
 )

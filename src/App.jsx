@@ -3,87 +3,92 @@ import { useReducer } from "react";
 import "./theme.css";
 import { FaMoon, FaRegSun } from "react-icons/fa6";
 import {Link} from "react-router-dom";
-const initialData = {
-  feild: "React",
-  level: "senior",
-  Count: 0,
-  theme: "light",
-};
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "CHANGE_FEILD":
-      return { ...state, feild: action.newValue };
-    case "CHANGE_LEVEL":
-      return { ...state, level: action.newValue };
-    case "CHANGE_COUNT":
-      return { ...state, Count: action.newValue };
-    case "CHANGE_THEME":
-      return { ...state, theme: action.newValue };
-    default:
-      return state;
-  }
-};
+import {useContext } from "react";
+import Data from "./context/Data";
+
+// const initialData = {
+//   feild: "React",
+//   level: "senior",
+//   Count: 0,
+//   theme: "light",
+// };
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "CHANGE_FEILD":
+//       return { ...state, feild: action.newValue };
+//     case "CHANGE_LEVEL":
+//       return { ...state, level: action.newValue };
+//     case "CHANGE_COUNT":
+//       return { ...state, Count: action.newValue };
+//     case "CHANGE_THEME":
+//       return { ...state, theme: action.newValue };
+//     default:
+//       return state;
+//   }
+// };
 
 function App() {
-  const [Data, dispatch] = useReducer(reducer, initialData);
+  // const [Data, dispatch] = useReducer(reducer, initialData);
+  const {feild, changeField, level, Count, theme} = useContext(Data);
+
   return (
-    <div className={`App ${Data.theme}`}>
-      <h1>My feiled is {Data.feild}</h1>
-      <button
+    <div className={`App ${theme}`}>
+      <h1>My feiled is {feild}</h1>
+      {/* <button
         onClick={() => {
           dispatch({ type: "CHANGE_FEILD", newValue: "Vue" });
         }}
       >
         Change Feild
-      </button>
+      </button> */}
       <br />
       <br />
-      <h1>I am a {Data.level}</h1>
-      <button
+      <h1>I am a {level}</h1>
+      {/* <button
         onClick={() => {
           dispatch({ type: "CHANGE_LEVEL", newValue: "Mid" });
         }}
       >
         Change Level
-      </button>
+      </button> */}
       <br />
       <br />
       <button
-        onClick={() => {
-          dispatch({ type: "CHANGE_COUNT", newValue: Data.Count + 1 });
-        }}
+        // onClick={() => {
+        //   dispatch({ type: "CHANGE_COUNT", newValue: Data.Count + 1 });
+        // }}
       >
-        Counter {Data.Count}
+        Counter {Count}
       </button>
       <br />
       <br />
       <div>
-        <button
+        {/* <button
           onClick={() => {
             dispatch({ type: "CHANGE_THEME", newValue: "light" });
           }}
           style={{ marginRight: "20px" }}
         >
           Light
-        </button>
-        <button
+        </button> */}
+        {/* <button
           style={{ marginRight: "20px" }}
           onClick={() => {
             dispatch({ type: "CHANGE_THEME", newValue: "dark" });
           }}
         >
           Dark
-        </button>
-        <button
+        </button> */}
+        {/* <button
           onClick={() => {
             dispatch({ type: "CHANGE_THEME", newValue: "pink" });
           }}
         >
           Pink
-        </button>
+        </button> */}
       </div>
       <div>
-        <button
+        {/* <button
           style={{ marginTop: "30px" }}
           onClick={() => {
             dispatch({
@@ -93,7 +98,7 @@ function App() {
           }}
         >
           {Data.theme == "light" ? <FaMoon /> : <FaRegSun />}
-        </button>
+        </button> */}
       </div>
       <button style={{ marginTop: "30px" }}>
         <Link to="/home">Go to home</Link></button>
